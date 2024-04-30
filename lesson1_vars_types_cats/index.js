@@ -48,7 +48,7 @@ console.log(typeof c)
 // extra task
 let firstNamePrompt = prompt('firstName')
 let lastNamePrompt = prompt('lastName')
-let agePrompt = prompt('age')
+let agePrompt = +prompt('age')
 
 console.log(firstNamePrompt)
 console.log(lastNamePrompt)
