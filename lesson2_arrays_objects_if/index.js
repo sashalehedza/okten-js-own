@@ -441,7 +441,7 @@ if (a > b) {
 // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //  буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
 
-let randomTypeValue = prompt('Enter value')
+let randomTypeValue = 0
 
 if (!!randomTypeValue) {
   randomTypeValue = 'default'
@@ -449,6 +449,9 @@ if (!!randomTypeValue) {
 } else {
   console.log(randomTypeValue)
 }
+
+let randomTypeValue2 = !!randomTypeValue ? 'default' : randomTypeValue
+console.log(randomTypeValue2)
 
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
 
