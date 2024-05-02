@@ -443,14 +443,14 @@ if (a > b) {
 
 let randomTypeValue = 0
 
-if (!!randomTypeValue) {
+if (!randomTypeValue) {
   randomTypeValue = 'default'
   console.log(randomTypeValue)
 } else {
   console.log(randomTypeValue)
 }
 
-let randomTypeValue2 = !!randomTypeValue ? 'default' : randomTypeValue
+let randomTypeValue2 = !randomTypeValue ? 'default' : randomTypeValue
 console.log(randomTypeValue2)
 
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
