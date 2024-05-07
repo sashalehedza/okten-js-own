@@ -293,10 +293,7 @@ let books = [
     name: 'book1',
     pages: 300,
     authors: [{ id: 1, name: 'author1' }],
-    genres: [
-      { id: 1, name: 'genre1' },
-      { id: 2, name: 'genre2' },
-    ],
+    genres: [{ id: 1, name: 'genre1' }],
   },
   {
     id: 2,
@@ -334,15 +331,26 @@ let books = [
 // -знайти наібльшу книжку/ки.
 let biggestPagesBooks = []
 let biggestPagesBook = books[0]
-for (let i = 0; i < books.length; i++) {
-  if (books[i].pages > biggestPagesBook.pages) {
-    biggestPagesBook = books[i]
-  }
-}
+let maxPagesCount = 0
 
-for (let i = 0; i < books.length; i++) {
-  if (books[i].pages === biggestPagesBook.pages) {
-    biggestPagesBooks[biggestPagesBooks.length] = books[i]
+// for (let i = 0; i < books.length; i++) {
+//   if (books[i].pages > biggestPagesBook.pages) {
+//     biggestPagesBook = books[i]
+//   }
+// }
+
+// for (let i = 0; i < books.length; i++) {
+//   if (books[i].pages === biggestPagesBook.pages) {
+//     biggestPagesBooks[biggestPagesBooks.length] = books[i]
+//   }
+// }
+
+for (let book of books) {
+  if (book.pages > maxPagesCount) {
+    maxPagesCount = book.pages
+    biggestPagesBooks = [book]
+  } else if (book.pages === maxPagesCount) {
+    biggestPagesBooks[biggestPagesBooks.length] = book
   }
 }
 
@@ -352,14 +360,25 @@ console.log('biggestPagesBooks', biggestPagesBooks)
 
 let biggestGenresBooks = []
 let biggestGenresBook = books[0]
-for (let i = 0; i < books.length; i++) {
-  if (books[i].genres.length > biggestGenresBook.genres.length) {
-    biggestGenresBook = books[i]
-  }
-}
-for (let i = 0; i < books.length; i++) {
-  if (books[i].genres.length === biggestGenresBook.genres.length) {
-    biggestGenresBooks[biggestGenresBooks.length] = books[i]
+let maxGenresCount = 0
+
+// for (let i = 0; i < books.length; i++) {
+//   if (books[i].genres.length > biggestGenresBook.genres.length) {
+//     biggestGenresBook = books[i]
+//   }
+// }
+// for (let i = 0; i < books.length; i++) {
+//   if (books[i].genres.length === biggestGenresBook.genres.length) {
+//     biggestGenresBooks[biggestGenresBooks.length] = books[i]
+//   }
+// }
+
+for (let book of books) {
+  if (book.genres.length > maxGenresCount) {
+    maxGenresCount = book.genres.length
+    biggestGenresBooks = [book]
+  } else if (book.genres.length === maxGenresCount) {
+    biggestGenresBooks[biggestGenresBooks.length] = book
   }
 }
 
@@ -369,14 +388,25 @@ console.log('biggestGenresBooks', biggestGenresBooks)
 
 let biggestNameBooks = []
 let biggestNameBook = books[0]
-for (let i = 0; i < books.length; i++) {
-  if (books[i].name.length > biggestNameBook.name.length) {
-    biggestNameBook = books[i]
-  }
-}
-for (let i = 0; i < books.length; i++) {
-  if (books[i].name.length === biggestNameBook.name.length) {
-    biggestNameBooks[biggestNameBooks.length] = books[i]
+let maxNameLenght = 0
+
+// for (let i = 0; i < books.length; i++) {
+//   if (books[i].name.length > biggestNameBook.name.length) {
+//     biggestNameBook = books[i]
+//   }
+// }
+// for (let i = 0; i < books.length; i++) {
+//   if (books[i].name.length === biggestNameBook.name.length) {
+//     biggestNameBooks[biggestNameBooks.length] = books[i]
+//   }
+// }
+
+for (let book of books) {
+  if (book.name.length > maxNameLenght) {
+    maxNameLenght = book.name.length
+    biggestNameBooks = [book]
+  } else if (book.name.length === maxNameLenght) {
+    biggestNameBooks[biggestNameBooks.length] = book
   }
 }
 console.log('biggestNameBooks', biggestNameBooks)
