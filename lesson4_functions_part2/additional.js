@@ -5,6 +5,7 @@ function userCard(key) {
 
   if (key < 1 || key > 3) {
     console.error('Invalid card key')
+    return
   }
 
   function getCardOptions() {
