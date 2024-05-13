@@ -52,7 +52,6 @@ function userCard(key) {
       console.error('Insufficient funds or transaction limit exceeded')
     }
   }
-
   return {
     getCardOptions,
     putCredits,
