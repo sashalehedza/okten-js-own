@@ -44,10 +44,10 @@ function userCard(key) {
 
   function transferCredits(amount, recipientCard) {
     const tax = 0.005
-    const amountWithTax = amount * (1 - tax)
+    const amountWithTax = amount * (1 + tax)
     if (amountWithTax <= balance && amountWithTax <= transactionLimit) {
-      takeCredits(amount)
-      recipientCard.putCredits(amount * (1 - tax))
+      takeCredits(amountWithTax)
+      recipientCard.putCredits(amount)
     } else {
       console.error('Insufficient funds or transaction limit exceeded')
     }
