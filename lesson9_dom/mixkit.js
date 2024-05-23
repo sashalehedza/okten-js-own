@@ -1,3 +1,5 @@
+//https://mixkit.co/free-stock-music/
+
 // const items = document.querySelectorAll('.item-grid__item')
 
 // const itemsArray = Array.from(items)
